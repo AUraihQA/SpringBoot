@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cat {
+public class CatDomain {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +19,12 @@ public class Cat {
 
 	// CONSTRUCTOR
 	// No Args
-	public Cat() {
+	public CatDomain() {
 		super();
 	}
 
 	// All Args
-	public Cat(Long id, String name, int age, int speechVolume) {
+	public CatDomain(Long id, String name, int age, int speechVolume) {
 		super();
 		this.id = id;
 		this.name = name;

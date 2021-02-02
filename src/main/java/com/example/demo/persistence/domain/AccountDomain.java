@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Account {
+public class AccountDomain {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class Account {
 	
 	private String name;
 
-	public Account() {
+	public AccountDomain() {
 		super();
 	}
 
-	public Account(Long id, String accountNumber, String name) {
+	public AccountDomain(Long id, String accountNumber, String name) {
 		super();
 		this.id = id;
 		this.accountNumber = accountNumber;
@@ -39,6 +39,18 @@ public class Account {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

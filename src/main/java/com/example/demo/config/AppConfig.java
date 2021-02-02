@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import java.time.LocalTime;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,13 +10,13 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 	
 	@Bean
-	public String helloWorld() {
-		return "Hello World";
+	public String getTime() {
+		return LocalTime.now().toString();
 	}
 	
 	@Bean
-	public String serverStart() {
-		return LocalTime.now().toString();
+	public ModelMapper getMapper(){
+		return new ModelMapper();
 	}
 
 }

@@ -13,8 +13,7 @@ public class StarterProjectApplication {
 		// ctrl + shift + o - optimises imports
 		ApplicationContext beanbag = SpringApplication.run(StarterProjectApplication.class, args);
 
-		System.out.println(beanbag.getBean("helloWorld", String.class));
-		System.out.println(beanbag.getBean("serverStart", String.class));		
+		System.out.println(beanbag.getBean("getTime", String.class));		
 	}
 	
 
