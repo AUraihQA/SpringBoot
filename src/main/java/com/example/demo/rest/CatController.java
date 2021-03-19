@@ -3,7 +3,6 @@ package com.example.demo.rest;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,12 +40,12 @@ public class CatController {
 	}
 	
 	//GET
-	@GetMapping("/read/{id}")
+	@GetMapping("/getCats")
 	public ResponseEntity<List<CatDTO>> readAll() {
 		return ResponseEntity.ok(this.service.readAll());
 	}
 	
-	@GetMapping("/getCats")
+	@GetMapping("/read/{id}")
 	public ResponseEntity<CatDTO> readOne(@PathVariable("id") Long id) {
 		return ResponseEntity.ok(this.service.readOne(id));
 	}
@@ -54,7 +53,7 @@ public class CatController {
 	
 	//PUT
 	@PutMapping("/update/{id}")
-	public ResponseEntity <CatDTO> update(@PathParam("id") Long id, @RequestBody CatDomain cat) {
+	public ResponseEntity <CatDTO> update(@PathVariable("id") Long id, @RequestBody CatDomain cat) {
 		return new ResponseEntity<CatDTO>(this.service.update(id, cat), HttpStatus.ACCEPTED);
 	}
 	
@@ -64,7 +63,7 @@ public class CatController {
 	public ResponseEntity<Object> delete(@PathVariable ("id") Long id) {
 		return this.service.delete(id) ? 
 				new ResponseEntity<>(HttpStatus.NO_CONTENT):
-				new ResponseEntity<>(HttpStatus.NO_CONTENT);
+				new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 }

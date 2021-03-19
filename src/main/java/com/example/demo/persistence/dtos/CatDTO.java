@@ -3,7 +3,7 @@ package com.example.demo.persistence.dtos;
 public class CatDTO {
 	private Long id;
 	private String name;
-	private int speechVolume;
+	private Integer speechVolume;
 	
 	
 	public CatDTO() {
@@ -11,7 +11,7 @@ public class CatDTO {
 	}
 
 
-	public CatDTO(Long id, String name, int speechVolume) {
+	public CatDTO(Long id, String name, Integer speechVolume) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -39,12 +39,12 @@ public class CatDTO {
 	}
 
 
-	public int getSpeechVolume() {
+	public Integer getSpeechVolume() {
 		return speechVolume;
 	}
 
 
-	public void setSpeechVolume(int speechVolume) {
+	public void setSpeechVolume(Integer speechVolume) {
 		this.speechVolume = speechVolume;
 	}
 
